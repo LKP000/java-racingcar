@@ -35,4 +35,15 @@ public class CarRacing {
             else break;
         }
     }
+
+    public void statePrint() {
+        for (Car car : cars) {
+            System.out.printf("%s : %s%n", car.getName(), "-".repeat(car.getLocation()));
+        }
+        System.out.println();
+    }
+
+    public void resultPrint() {
+        System.out.printf("최종 우승자 : %s\n", String.join(", ", winners));
+    }
 }
