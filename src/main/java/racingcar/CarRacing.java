@@ -19,4 +19,10 @@ public class CarRacing {
     public void setRound(int r) {
         round = r;
     }
+
+    public void moveCars() {
+        for (Car car : cars) {
+            car.move();
+        }
+    }
 }
