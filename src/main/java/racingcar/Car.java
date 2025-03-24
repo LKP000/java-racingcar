@@ -2,7 +2,8 @@ package racingcar;
 
 public class Car {
     private String name;
-
+    private int location;
+    
     public Car(String s) {
         if(s.length() > 5) throw new IllegalArgumentException();
         name = s;
@@ -11,5 +12,9 @@ public class Car {
 
     public String getName() {
         return name;
+    }
+
+    public int getLocation() {
+        return location;
     }
 }
