@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class CarRacing {
     private List<Car> cars = new ArrayList<>();
+    private int round;
 
     public CarRacing() {}
 
@@ -13,5 +14,9 @@ public class CarRacing {
         for (var name : names) {
             cars.add(new Car(name));
         }
+    }
+
+    public void setRound(int r) {
+        round = r;
     }
 }
