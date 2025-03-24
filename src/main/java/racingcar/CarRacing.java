@@ -1,5 +1,6 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Console;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -46,4 +47,25 @@ public class CarRacing {
     public void resultPrint() {
         System.out.printf("최종 우승자 : %s\n", String.join(", ", winners));
     }
+
+    public void game() {
+        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+        String str = Console.readLine();
+        if(str == null || str.isEmpty()) throw new IllegalArgumentException();
+        addCars(str);
+
+        System.out.println("시도할 회수는 몇회인가요?");
+        int r = Integer.parseInt(Console.readLine());
+        if(r <= 0) throw new IllegalArgumentException();
+        setRound(r);
+
+        System.out.println("실행 결과");
+        for (int i=0; i<round; ++i) {
+            moveCars();
+            statePrint();
+        }
+        referee();
+        resultPrint();
+    }
+
 }
